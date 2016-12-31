@@ -1,0 +1,36 @@
+runtime: go
+api_version: go1
+module: default
+
+handlers: 
+- url: /static
+  #static_files: public/\1
+  #application_readable: true
+  static_dir: static
+  #upload: public/*/\.(html|js|jpg|gif|png)$
+- url: /dist
+  #static_files: public/\1
+  #application_readable: true
+  static_dir: dist
+  #upload: public/*/\.(html|js|jpg|gif|png)$
+- url: /fonts
+  #static_files: public/\1
+  #application_readable: true
+  static_dir: fonts
+  #upload: public/*/\.(html|js|jpg|gif|png)$
+- url: /.*
+  script: _go_app
+#  auth_fail_action: redirect
+
+
+
+  # Handle the main page by serving the index page.
+# Note the $ to specify the end of the path, since app.yaml does prefix matching.
+#- url: /$
+ # static_files: public/index.html
+  #upload: public/index.html
+
+# Handle folder urls by serving the index.html page inside.
+#- url: /(.*)/$
+ # static_files: public/\1/index.html
+  #upload: public/.*/index.html

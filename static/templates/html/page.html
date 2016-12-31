@@ -1,0 +1,57 @@
+{{define "page"}}
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+	<meta charset="UTF-8">
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+	<!--<meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta name="apple-mobile-web-app-title" content="The Next Web">
+
+	<title>TeamOTeam | recrutement &amp; appels offres | consulting</title>
+	<link rel="stylesheet" href="/dist/app.css">
+	<link href="https://fonts.googleapis.com/css?family=Androgyne|Anton|Architects+Daughter|Bad+Script|Bangers|Bungee|Candal|Dancing+Script|Days+One|Fredoka+One|Josefin+Sans|Josefin+Slab|Kaushan+Script|Open+Sans|Open+Sans+Condensed:300|Oswald|Pacifico|Paytone+One|Roboto|Amaranth|Arima+Madurai|Asap|Baloo+Thambi|Bungee|Bungee+Hairline|Bungee+Inline|Bungee+Outline|Bungee+Shade|Chewy|Marcellus+SC|Oleo+Script|Playfair+Display+SC|Six+Caps|Teko|Ubuntu|Ubuntu+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="/fonts/feather.css">
+    <!--<script src="https://unpkg.com/vuex" type="text/javascript" charset="utf-8" async defer></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/2.1.1/vuex.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!--
+	<link rel="stylesheet" href="./fonts/flaticon.css">
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">-->
+</head>
+<body>    
+	
+<script>
+const Store = new Vuex.Store({
+state: {
+	jobSearch: {
+    	categ:"",
+    	job:"",
+    	minDur:3,
+    	maxDur:24
+    },
+	},
+mutations: {
+	setJobSearch (state,search) {
+		state.jobSearch=search;
+		console.log("updated job search:");
+		console.log(state.jobSearch);
+		},
+	}
+});
+</script>
+
+    <div id="{{.Module}}"></div>
+    
+	
+	<script src="/dist/vendor.bundle.js" async></script>
+	<script src="/dist/app.js" async></script>
+</body>
+</html>
+{{end}}
